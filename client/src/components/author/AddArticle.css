@@ -1,0 +1,226 @@
+/* Page background */
+
+
+.add-article-page {
+  max-width: 400px;
+  margin: 150px auto 2rem; /* Increased top margin to move form down */
+  padding: 2.5rem;
+  background: linear-gradient(to bottom right, #c67878, #fff);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative background */
+.add-article-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #b08686 0%, #f5f5f5 100%);
+  z-index: -1;
+}
+label{
+  color:#2c2c2c;
+}
+/* Title styling */
+.form-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #ff8a80;
+  font-size: 2.2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(255, 138, 128, 0.1);
+  margin-top:200px;
+}
+
+/* Form container */
+.article-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #e9d298;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem; /* Reduced spacing between labels and inputs */
+}
+
+/* Labels */
+.form-label {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1rem; /* Adjusted font size */
+  color: #2c2c2c;
+  font-weight: 600;
+  margin-left: 0; /* Removed left margin */
+}
+
+/* Input fields */
+.form-input {
+  height: 50px;
+  padding: 0.8rem;
+  border: 2px solid #464543;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  color: #474545;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Select dropdown */
+.form-select {
+  height: 50px;
+  padding: 0 1.2rem;
+  border: 2px solid #32312f;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  color: #616161;
+  background: #fff;
+  cursor: pointer;
+  appearance: none;
+  background-image: 
+    linear-gradient(45deg, transparent 50%, #ffab91 50%),
+    linear-gradient(135deg, #ffab91 50%, transparent 50%);
+  background-position: 
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 150px;
+  max-height: 300px;
+  padding: 1rem 1.2rem;
+  border: 2px solid #3a3937;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  color: #494949;
+  background: #ffffff;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Focus states */
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #52504f;
+  box-shadow: 0 0 0 4px rgba(255, 171, 145, 0.1);
+}
+
+/* Submit button */
+.submit-button {
+  background: linear-gradient(135deg, #ff9e80 0%, #ff8a80 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  align-self: center;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(255, 138, 128, 0.2);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 138, 128, 0.3);
+  background: linear-gradient(135deg, #ff8a80 0%, #ff7961 100%);
+}
+
+.submit-button:disabled {
+  background: #e0e0e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Error messages */
+.error-message {
+  color: #ff8a80;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba(255, 138, 128, 0.1);
+  border-radius: 8px;
+}
+
+/* Success message */
+.success-message {
+  color: #66bb6a;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(102, 187, 106, 0.1);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #bdbdbd;
+  opacity: 0.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-article-page {
+    margin: 100px 1rem 1rem; /* Adjusted for smaller screens */
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-form {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .submit-button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Optional: Add some decorative elements */
+.add-article-page::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ffe0b2 0%, #ffccbc 100%);
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+}

@@ -1,0 +1,185 @@
+/* Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Gloria+Hallelujah&family=Indie+Flower&display=swap');
+
+:root {
+  --paper-white: #fff9f0;
+  --ink-dark: #2d1810;
+  --accent-color: #e85d75;
+  --highlight-yellow: rgba(255, 242, 84, 0.4);
+  --shadow-soft: rgba(45, 24, 16, 0.15);
+}
+
+.header {
+  background-color: var(--paper-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--shadow-soft);
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+}
+
+.header-container {
+  max-width: 1200px;
+  height:30px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(2px 2px 0 var(--shadow-soft));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  transform: rotate(-5deg);
+}
+
+.logo-text {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.8rem;
+  color: var(--ink-dark);
+  text-shadow: 2px 2px 0 var(--paper-white),
+               3px 3px 0 var(--shadow-soft);
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.auth-button {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.signin-button {
+  color: var(--ink-dark);
+  position: relative;
+}
+
+.signin-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--highlight-yellow);
+  z-index: -1;
+  transform: scaleX(0.7) skewX(-12deg);
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.signin-button:hover::before {
+  transform: scaleX(1.1) skewX(-12deg);
+  opacity: 1;
+}
+
+.signup-button {
+  color: var(--paper-white);
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  box-shadow: 3px 3px 0 var(--shadow-soft);
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--shadow-soft);
+  background: transparent;
+  color: var(--accent-color);
+}
+
+/* User profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--paper-white);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--shadow-soft);
+}
+
+.user-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--shadow-soft);
+  padding: 2px;
+  background: var(--paper-white);
+}
+
+.user-role {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: var(--ink-dark);
+  background: var(--highlight-yellow);
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+}
+
+.username {
+  font-family: 'Indie Flower', cursive;
+  color: var(--ink-dark);
+  font-size: 1.2rem;
+}
+
+.signout-button {
+  font-family: 'Gloria Hallelujah', cursive;
+  background: none;
+  border: 2px dashed var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.signout-button:hover {
+  background: var(--accent-color);
+  color: var(--paper-white);
+  border-style: solid;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--shadow-soft);
+}

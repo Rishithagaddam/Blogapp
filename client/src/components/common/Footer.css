@@ -1,0 +1,188 @@
+/* Updated Footer styles */
+.footer {
+  background: #5d5959; /* Dark background */
+  padding: 4rem 0 2rem;
+  position: relative;
+  border-top: 3px solid var(--accent-color);
+  background-image: 
+    linear-gradient(rgba(60, 48, 72, 0.97), rgba(97, 86, 119, 0.97)),
+    repeating-linear-gradient(45deg, #aba0a0 25%, transparent 25%, transparent 75%, #222 75%, #222),
+    repeating-linear-gradient(45deg, #181313 25%, transparent 25%, transparent 75%, #222 75%, #222);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+  background-position: 0 0, 0 0, 10px 10px;
+}
+
+/* Add a decorative top border */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, 
+    var(--accent-color) 0%,
+    #64b5f6 25%,
+    #81c784 50%,
+    #ba68c8 75%,
+    var(--accent-color) 100%
+  );
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Section styling */
+.footer-section {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 5, 5, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading styling */
+.footer-heading {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Links styling with different colors */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 1rem;
+}
+
+.footer-links li a {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 1.5rem;
+  display: inline-block;
+}
+
+/* Different colors for different sections */
+.footer-section:nth-child(1) .footer-links li a {
+  color: #FF9999; /* Soft red */
+}
+
+.footer-section:nth-child(2) .footer-links li a {
+  color: #99FF99; /* Soft green */
+}
+
+.footer-section:nth-child(3) .footer-links li a {
+  color: #9999FF; /* Soft blue */
+}
+
+.footer-section:nth-child(4) .footer-links li a {
+  color: #FFCC99; /* Soft orange */
+}
+
+/* Hover effects for links */
+.footer-links li a:hover {
+  transform: translateX(5px);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Add decorative bullet points */
+.footer-links li a::before {
+  content: '✎';
+  position: absolute;
+  left: 0;
+  color: currentColor;
+  font-size: 1rem;
+  transform: rotate(-45deg);
+}
+
+/* Different icons for different sections */
+.footer-section:nth-child(1) .footer-links li a::before { content: '♥'; }
+.footer-section:nth-child(2) .footer-links li a::before { content: '✿'; }
+.footer-section:nth-child(3) .footer-links li a::before { content: '★'; }
+.footer-section:nth-child(4) .footer-links li a::before { content: '✎'; }
+
+/* Footer bottom styling */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-family: 'Caveat', cursive;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Add hover glow effect */
+.footer-links li a:hover {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Add subtle animation on hover */
+.footer-section:hover .footer-heading::after {
+  width: 75px;
+  transition: width 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+
+  .footer-section {
+    padding: 1.5rem;
+  }
+
+  .footer-heading {
+    font-size: 1.3rem;
+  }
+
+  .footer-links li a {
+    font-size: 1.1rem;
+  }
+} 

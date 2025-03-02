@@ -1,0 +1,186 @@
+/* Container styles */
+.auth-container {
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)),
+              url('../../assets/bg.jpg') center/cover no-repeat fixed;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+/* Clerk form customization */
+.cl-card {
+  background: rgba(192, 189, 189, 0.95) !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.cl-headerTitle {
+  /* color: #EAEAEA !important; */
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.cl-headerSubtitle {
+  /* color: #EAEAEA !important; */
+}
+
+.cl-footerAction {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border-top: 1px solid rgba(225, 217, 217, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Social Buttons Styling */
+.cl-socialButtonsProviderIcon {
+  color: #EAEAEA !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* .cl-socialButtonsButton {
+  background: rgba(255, 49, 49, 0.1) !important;
+  border: 1px solid rgba(255, 49, 49, 0.3) !important;
+  color: #EAEAEA !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cl-socialButtonsButton:hover {
+  background: rgba(255, 49, 49, 0.2) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(255, 49, 49, 0.2) !important;
+} */
+.cl-socialButtonsButton {
+    background: transparent !important;
+    border: 2px solid white !important; /* White border */
+    color: white !important; /* Ensure text is white */
+    opacity: 1 !important;
+  }
+  
+  
+  .cl-socialButtonsButton:hover {
+    background: rgba(228, 224, 224, 0.2) !important;
+    border: 1px solid rgb(199, 194, 194) !important; /* Red border on hover */
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(231, 225, 225, 0.2) !important;
+  }
+  
+
+.cl-socialButtonsProviderText {
+  color: #EAEAEA !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Keep existing styles */
+.cl-formButtonPrimary {
+  background: #f3eeee !important;
+  transition: all 0.3s ease !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: #e3dede !important;
+  transform: translateY(-1px) !important;
+}
+
+.cl-formFieldInput {
+  background: rgba(18, 18, 18, 0.8) !important;
+  border: 1px solid rgba(255, 49, 49, 0.2) !important;
+  color: #EAEAEA !important;
+}
+
+.cl-formFieldLabel {
+  color: #282525 !important;
+}
+
+.cl-footerActionLink {
+  color: #e5e5e5 !important;
+}
+
+.cl-footerActionLink:hover {
+  color: #e8dbdb !important;
+}
+
+.cl-dividerText {
+  color: #EAEAEA !important;
+}
+
+.cl-dividerLine {
+  background: rgba(228, 223, 223, 0.2) !important;
+}
+
+/* Header Sign In/Up buttons */
+.cl-headerActions {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: flex-end !important;
+  margin: 1rem !important;
+}
+
+.cl-headerAction {
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.cl-headerAction[data-action="sign_up"] {
+  background: #e7e0e0 !important;
+  color: #EAEAEA !important;
+}
+
+.cl-headerAction[data-action="sign_in"] {
+  background: rgba(26, 26, 26, 0.95) !important;
+  color: #EAEAEA !important;
+  border: 1px solid rgba(189, 182, 182, 0.3) !important;
+}
+
+/* Continue button styling */
+.cl-internal-b3fm6y {
+  color: #000000 !important; /* Changed text color to black */
+  font-weight: 600 !important;
+}
+
+/* Optional: Hover state for better visibility */
+.cl-internal-b3fm6y:hover {
+  color: #000000 !important;
+}
+
+/* Alternative selectors */
+.cl-signIn-button, 
+.cl-signUp-button,
+.cl-button-primary {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+/* For all Clerk buttons */
+[class*='cl-button'] {
+  color: #000000 !important;
+  font-weight: 600 !important;
+} 

@@ -1,0 +1,708 @@
+/* Import handwritten fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+:root {
+  --paper-bg: #fffdf8;
+  --ink-blue: #2b50aa;
+  --ink-purple: #6b4de6;
+  --pencil-gray: #4a4a4a;
+  --sticky-yellow: #fff7b3;
+  --highlight-pink: rgba(255, 182, 193, 0.3);
+  --highlight-blue: rgba(135, 206, 235, 0.3);
+  --notebook-line: #c1c8e4;
+  
+  /* Add new card color variables */
+  --card-color-1: #e3f2fd;
+  --card-color-2: #f3e5f5;
+  --card-color-3: #e8f5e9;
+  --card-color-4: #fff3e0;
+  --card-color-5: #f3e5f5;
+  
+  /* Add role selection colors */
+  --role-author: #4a148c;
+  --role-reader: #1a237e;
+  --role-hover: #7e57c2;
+}
+
+/* Main Container */
+.home-container {
+  min-height: 100vh;
+  background-color: var(--paper-bg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.hero-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 3.5rem;
+  color: var(--ink-blue);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0px var(--highlight-pink);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--ink-purple);
+  transform: rotate(-1deg);
+}
+
+.hero-subtitle {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  color: var(--pencil-gray);
+  margin-top: 1.5rem;
+}
+
+/* Featured Articles Section */
+.featured-articles {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 2.5rem;
+  color: var(--ink-blue);
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--sticky-yellow);
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+.section-title::before {
+  content: '✎';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Article Cards Container */
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+/* Enhanced Article Cards */
+.article-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 3rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 700px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  overflow: hidden;
+  gap: 1.5rem;
+}
+
+/* Card Color Variations with Gradients */
+.article-card:nth-child(6n+1) {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 4px solid #1976d2;
+}
+
+.article-card:nth-child(6n+2) {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  border-left: 4px solid #7b1fa2;
+}
+
+.article-card:nth-child(6n+3) {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 4px solid #388e3c;
+}
+
+.article-card:nth-child(6n+4) {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-left: 4px solid #f57c00;
+}
+
+.article-card:nth-child(6n+5) {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  border-left: 4px solid #c2185b;
+}
+
+.article-card:nth-child(6n+6) {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  border-left: 4px solid #0097a7;
+}
+
+/* Enhanced Card Hover Effects */
+.article-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 
+    0 15px 30px rgba(0,0,0,0.15),
+    0 0 0 5px var(--highlight-blue);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.article-category {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--ink-purple);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: rotate(-2deg);
+  margin-bottom: 1.5rem;
+}
+
+/* Reading Time Badge */
+.reading-time {
+  font-family: 'Indie Flower', cursive;
+  font-size: 0.9rem;
+  color: var(--pencil-gray);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.reading-time::before {
+  content: '⏱️';
+}
+
+/* Article Title with Decoration */
+.article-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.8rem;
+  color: black;
+  margin: 1.5rem 0;
+  line-height: 1.4;
+  text-align: left;
+  position: relative;
+  padding-bottom: 0.5rem;
+  min-height: 80px;
+}
+
+.article-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink-purple),
+    var(--ink-purple) 5px,
+    transparent 5px,
+    transparent 8px
+  );
+}
+
+/* Enhanced Article Excerpt */
+.article-excerpt {
+  font-family: 'Indie Flower', cursive;
+  color: black;
+  line-height: 1.6;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  position: relative;
+  min-height: 150px;
+}
+
+.article-excerpt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 0px, transparent 23px, var(--notebook-line) 24px);
+  background-size: 100% 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Article Tags */
+.article-tags {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.article-tag {
+  font-family: 'Indie Flower', cursive;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.2rem 0.8rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px dashed var(--ink-purple);
+}
+
+.article-tag:hover {
+  background: var(--highlight-blue);
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Article Stats */
+.article-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Indie Flower', cursive;
+  color: black;
+}
+
+.stat-item.views::before { content: '👁️'; }
+.stat-item.likes::before { content: '❤️'; }
+.stat-item.comments::before { content: '💭'; }
+
+/* Article Footer */
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 2px dashed rgba(0,0,0,0.1);
+}
+
+/* Author Info */
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-purple);
+  padding: 2px;
+  background: #fff;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-author {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--ink-purple);
+  font-weight: 600;
+}
+
+.article-date {
+  font-family: 'Indie Flower', cursive;
+  font-size: 0.9rem;
+  color: var(--pencil-gray);
+}
+
+/* Enhanced Read More Button */
+.read-more-btn {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ink-blue);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  min-width: 200px;
+  align-self: center;
+}
+
+.read-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.read-more-btn:hover::before {
+  left: 100%;
+}
+
+.read-more-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    3px 3px 0 var(--highlight-pink),
+    -3px -3px 0 var(--highlight-blue);
+}
+
+/* Card Bookmark */
+.bookmark {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  width: 30px;
+  height: 40px;
+  background: var(--ink-purple);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bookmark:hover {
+  transform: scale(1.1);
+}
+
+/* New Feature: Progress Bar */
+.reading-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--ink-purple);
+  width: 75%; /* Adjust based on actual reading progress */
+  transition: width 0.3s ease;
+}
+
+/* Card Status Indicator */
+.status-indicator {
+  position: absolute;
+  top: 10px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.new::before {
+  content: 'NEW';
+  position: absolute;
+  left: 15px;
+  top: -5px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 0.8rem;
+  color: #4caf50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .role-selection-container {
+    width: 90%;
+  }
+  
+  .role-cards-container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 968px) {
+  .role-cards-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .article-card {
+    padding: 2rem;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .role-selection-container {
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .article-card {
+    margin: 1rem auto;
+  }
+
+  .article-stats {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .article-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+/* Main container for the entire role selection section */
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #e9d7d7;
+}
+
+/* Role selection header - centered */
+.role-selection-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 800px; /* Limit the width of the header text */
+  position: relative;
+  z-index: 1;
+}
+
+.role-title {
+  font-size: 2.5rem;
+  color: #54faea;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.role-subtitle {
+  font-size: 1.2rem;
+  color: #999;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+/* Role cards container - centered */
+.role-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.role-grid{
+  display:flex;
+  gap:2rem;
+  justify-content: center;
+}
+/* Individual role card */
+.role-card {
+  width: 280px;
+  height: 320px;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  background: #ebdede;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Role icon container */
+.role-icon {
+  width: 60px;
+  height: 60px;
+  background: #535252;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.role-icon svg {
+  width: 30px;
+  height: 30px;
+  color: #0d0e0f;
+}
+
+/* Role title */
+.role-name {
+  font-size: 1.5rem;
+  color: #212222;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Role description */
+.role-description {
+  font-size: 0.9rem;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hover effects */
+.role-card:hover {
+  transform: translateY(-5px);
+  border-color: #2e3132;
+  box-shadow: 0 10px 20px rgba(255, 49, 49, 0.1);
+}
+
+.role-card:hover .role-icon {
+  background: #222222;
+}
+
+.role-card:hover .role-icon svg {
+  color: #fff;
+}
+
+/* Select role button */
+.select-role-btn {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid #54d4e7;
+  color: #31fff5;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  margin-top: auto;
+}
+
+.select-role-btn:hover {
+  background: #36fcf2;
+  color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .role-cards-container {
+    grid-template-columns: repeat(2, 280px);
+    padding: 1.5rem;
+  }
+
+  .role-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .role-cards-container {
+    grid-template-columns: 280px;
+    padding: 1rem;
+  }
+
+  .role-selection-header {
+    margin-bottom: 2rem;
+  }
+
+  .role-title {
+    font-size: 2rem;
+  }
+
+  .role-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Optional: Add a subtle animation for the cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.role-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.role-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.role-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
